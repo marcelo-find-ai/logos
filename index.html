@@ -1,139 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Playfair+Display:wght@600&family=Abril+Fatface&family=Comfortaa:wght@700&family=Righteous&family=Dela+Gothic+One&family=Space+Grotesk:wght@600&family=Calistoga&family=DM+Serif+Display&family=Outfit:wght@600&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Abril+Fatface&family=Righteous&family=Space+Grotesk:wght@700&family=Calistoga&family=DM+Serif+Display&display=swap');
+    
     body {
-      background: white;
       margin: 0;
       padding: 20px;
-      display: flex;
-      justify-content: center;
-      overflow-x: auto;
+      background: #fff;
     }
+
     .matrix {
-      display: flex;
-      gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 2vw;
+      padding: 2vw;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
     }
-    .logo-column {
+    
+    .logo-cell {
+      aspect-ratio: 1;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      min-width: 120px;
+      justify-content: center;
+      position: relative;
+      padding: 1vw;
+      transition: transform 0.2s ease;
     }
+
+    .logo-cell:hover {
+      transform: scale(1.05);
+    }
+    
     .logo-container {
       display: flex;
-      justify-content: center;
       align-items: center;
-      padding: 8px;
-      font-size: 20px;
-      white-space: nowrap;
+      justify-content: center;
       width: 100%;
-      margin: 2px 0;
+      font-size: clamp(1rem, 1.5vw, 2rem);
     }
-    .ai-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2px 6px;
-      margin-left: 4px;
-      color: white;
-      border-radius: 2px;
-    }
-    .font-label {
-      font-size: 12px;
-      text-align: center;
+    
+    .cell-id {
+      position: absolute;
+      top: 0.5vw;
+      left: 0.5vw;
+      font-size: 0.7em;
+      font-family: monospace;
+      opacity: 0.5;
       color: #666;
-      margin: 8px 0;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      padding: 4px;
-      background: #f5f5f5;
-      border-radius: 4px;
-      width: 100%;
     }
+    
+    .ai-box {
+      padding: 0.1em 0.3em;
+      color: white;
+      margin-left: 0.1em;
+      border-radius: 0.1em;
+    }
+
+    /* Font families */
+    .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    .font-abril { font-family: 'Abril Fatface', serif; }
+    .font-righteous { font-family: 'Righteous', display; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    .font-calistoga { font-family: 'Calistoga', display; }
+    .font-dm { font-family: 'DM Serif Display', serif; }
+
+    /* Colors */
+    .color-1 { color: #007766; }
+    .color-2 { color: #008877; }
+    .color-3 { color: #009988; }
+    .color-4 { color: #00aa99; }
+    .color-5 { color: #00bbaa; }
+    .color-6 { color: #0088aa; }
+    .color-7 { color: #0077bb; }
+    .color-8 { color: #0066cc; }
+
+    .bg-1 { background: #007766; }
+    .bg-2 { background: #008877; }
+    .bg-3 { background: #009988; }
+    .bg-4 { background: #00aa99; }
+    .bg-5 { background: #00bbaa; }
+    .bg-6 { background: #0088aa; }
+    .bg-7 { background: #0077bb; }
+    .bg-8 { background: #0066cc; }
   </style>
 </head>
 <body>
   <div class="matrix">
-    <!-- Montserrat Column -->
-    <div class="logo-column">
-      <div class="font-label">Montserrat</div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #007766;">Find<span class="ai-box" style="background: #007766;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #008877;">Find<span class="ai-box" style="background: #008877;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #009988;">Find<span class="ai-box" style="background: #009988;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #00aa99;">Find<span class="ai-box" style="background: #00aa99;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #00bbaa;">Find<span class="ai-box" style="background: #00bbaa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #0088aa;">Find<span class="ai-box" style="background: #0088aa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #0077bb;">Find<span class="ai-box" style="background: #0077bb;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Montserrat', sans-serif; color: #0066cc;">Find<span class="ai-box" style="background: #0066cc;">AI</span></div>
-    </div>
+    <!-- Generated using JavaScript for cleaner code -->
+    <script>
+      const fonts = [
+        ['montserrat', 'Montserrat'],
+        ['abril', 'Abril Fatface'],
+        ['righteous', 'Righteous'],
+        ['space', 'Space Grotesk'],
+        ['calistoga', 'Calistoga'],
+        ['dm', 'DM Serif']
+      ];
 
-    <!-- Abril Fatface Column -->
-    <div class="logo-column" >
-      <div class="font-label">Abril Fatface</div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #007766;">Find<span class="ai-box" style="background: #007766;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #008877;">Find<span class="ai-box" style="background: #008877;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #009988;">Find<span class="ai-box" style="background: #009988;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #00aa99;">Find<span class="ai-box" style="background: #00aa99;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #00bbaa;">Find<span class="ai-box" style="background: #00bbaa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #0088aa;">Find<span class="ai-box" style="background: #0088aa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #0077bb;">Find<span class="ai-box" style="background: #0077bb;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Abril Fatface', serif; color: #0066cc;">Find<span class="ai-box" style="background: #0066cc;">AI</span></div>
-    </div>
-
-    <!-- Righteous Column -->
-    <div class="logo-column">
-      <div class="font-label">Righteous</div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #007766;">Find<span class="ai-box" style="background: #007766;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #008877;">Find<span class="ai-box" style="background: #008877;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #009988;">Find<span class="ai-box" style="background: #009988;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #00aa99;">Find<span class="ai-box" style="background: #00aa99;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #00bbaa;">Find<span class="ai-box" style="background: #00bbaa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #0088aa;">Find<span class="ai-box" style="background: #0088aa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #0077bb;">Find<span class="ai-box" style="background: #0077bb;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Righteous', display; color: #0066cc;">Find<span class="ai-box" style="background: #0066cc;">AI</span></div>
-    </div>
-
-    <!-- Space Grotesk Column -->
-    <div class="logo-column">
-      <div class="font-label">Space Grotesk</div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #007766;">Find<span class="ai-box" style="background: #007766;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #008877;">Find<span class="ai-box" style="background: #008877;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #009988;">Find<span class="ai-box" style="background: #009988;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #00aa99;">Find<span class="ai-box" style="background: #00aa99;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #00bbaa;">Find<span class="ai-box" style="background: #00bbaa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #0088aa;">Find<span class="ai-box" style="background: #0088aa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #0077bb;">Find<span class="ai-box" style="background: #0077bb;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Space Grotesk', sans-serif; color: #0066cc;">Find<span class="ai-box" style="background: #0066cc;">AI</span></div>
-    </div>
-
-    <!-- Calistoga Column -->
-    <div class="logo-column">
-      <div class="font-label">Calistoga</div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #007766;">Find<span class="ai-box" style="background: #007766;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #008877;">Find<span class="ai-box" style="background: #008877;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #009988;">Find<span class="ai-box" style="background: #009988;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #00aa99;">Find<span class="ai-box" style="background: #00aa99;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #00bbaa;">Find<span class="ai-box" style="background: #00bbaa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #0088aa;">Find<span class="ai-box" style="background: #0088aa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #0077bb;">Find<span class="ai-box" style="background: #0077bb;">AI</span></div>
-      <div class="logo-container" style="font-family: 'Calistoga', display; color: #0066cc;">Find<span class="ai-box" style="background: #0066cc;">AI</span></div>
-    </div>
-
-    <!-- DM Serif Display Column -->
-    <div class="logo-column">
-      <div class="font-label">DM Serif</div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #007766;">Find<span class="ai-box" style="background: #007766;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #008877;">Find<span class="ai-box" style="background: #008877;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #009988;">Find<span class="ai-box" style="background: #009988;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #00aa99;">Find<span class="ai-box" style="background: #00aa99;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #00bbaa;">Find<span class="ai-box" style="background: #00bbaa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #0088aa;">Find<span class="ai-box" style="background: #0088aa;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #0077bb;">Find<span class="ai-box" style="background: #0077bb;">AI</span></div>
-      <div class="logo-container" style="font-family: 'DM Serif Display', serif; color: #0066cc;">Find<span class="ai-box" style="background: #0066cc;">AI</span></div>
-    </div>
-
+      const rows = 'ABCDEF';
+      
+      fonts.forEach((font, rowIndex) => {
+        for(let col = 1; col <= 8; col++) {
+          document.write(`
+            <div class="logo-cell">
+              <span class="cell-id">${rows[rowIndex]}${col}</span>
+              <div class="logo-container font-${font[0]} color-${col}">
+                Find<span class="ai-box bg-${col}">AI</span>
+              </div>
+            </div>
+          `);
+        }
+      });
+    </script>
   </div>
 </body>
 </html>
