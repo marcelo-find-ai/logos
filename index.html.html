@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Abril+Fatface&family=Righteous&family=Space+Grotesk:wght@700&family=Calistoga&family=DM+Serif+Display&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 2vw;
+      padding: 2vw;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .logo-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 1vw;
+      transition: transform 0.2s ease;
+    }
+
+    .logo-cell:hover {
+      transform: scale(1.05);
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: clamp(1rem, 1.5vw, 2rem);
+    }
+    
+    .cell-id {
+      position: absolute;
+      top: 0.5vw;
+      left: 0.5vw;
+      font-size: 0.7em;
+      font-family: monospace;
+      opacity: 0.5;
+      color: #666;
+    }
+    
+    .ai-box {
+      padding: 0.1em 0.3em;
+      color: white;
+      margin-left: 0.1em;
+      border-radius: 0.1em;
+    }
+
+    /* Font families */
+    .font-montserrat { font-family: 'Montserrat', sans-serif; }
+    .font-abril { font-family: 'Abril Fatface', serif; }
+    .font-righteous { font-family: 'Righteous', display; }
+    .font-space { font-family: 'Space Grotesk', sans-serif; }
+    .font-calistoga { font-family: 'Calistoga', display; }
+    .font-dm { font-family: 'DM Serif Display', serif; }
+
+    /* Colors */
+    .color-1 { color: #007766; }
+    .color-2 { color: #008877; }
+    .color-3 { color: #009988; }
+    .color-4 { color: #00aa99; }
+    .color-5 { color: #00bbaa; }
+    .color-6 { color: #0088aa; }
+    .color-7 { color: #0077bb; }
+    .color-8 { color: #0066cc; }
+
+    .bg-1 { background: #007766; }
+    .bg-2 { background: #008877; }
+    .bg-3 { background: #009988; }
+    .bg-4 { background: #00aa99; }
+    .bg-5 { background: #00bbaa; }
+    .bg-6 { background: #0088aa; }
+    .bg-7 { background: #0077bb; }
+    .bg-8 { background: #0066cc; }
+  </style>
+</head>
+<body>
+  <div class="matrix">
+    <!-- Generated using JavaScript for cleaner code -->
+    <script>
+      const fonts = [
+        ['montserrat', 'Montserrat'],
+        ['abril', 'Abril Fatface'],
+        ['righteous', 'Righteous'],
+        ['space', 'Space Grotesk'],
+        ['calistoga', 'Calistoga'],
+        ['dm', 'DM Serif']
+      ];
+
+      const rows = 'ABCDEF';
+      
+      fonts.forEach((font, rowIndex) => {
+        for(let col = 1; col <= 8; col++) {
+          document.write(`
+            <div class="logo-cell">
+              <span class="cell-id">${rows[rowIndex]}${col}</span>
+              <div class="logo-container font-${font[0]} color-${col}">
+                Find<span class="ai-box bg-${col}">AI</span>
+              </div>
+            </div>
+          `);
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>
